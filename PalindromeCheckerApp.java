@@ -1,36 +1,32 @@
-import java.util.Stack;
-import java.util.Queue;
-import java.util.LinkedList;
-
-public class PalindromeCheckerApp {
+public class UseCase10PalindromeCheckerApp {
 
     public static void main(String[] args) {
 
-     
-        String word = "level";
+    
+        String input = "Madam In Eden Im Adam";
 
-        Stack<Character> stack = new Stack<>();
-        Queue<Character> queue = new LinkedList<>();
-
-        for (int i = 0; i < word.length(); i++) {
-            char ch = word.charAt(i);
-            stack.push(ch);      // LIFO
-            queue.add(ch);       // FIFO
-        }
+      
+        String normalized = input.replaceAll("\\s+", "").toLowerCase();
 
         boolean isPalindrome = true;
-        while (!queue.isEmpty()) {
-            if (queue.remove() != stack.pop()) {
+
+        int start = 0;
+        int end = normalized.length() - 1;
+
+        while (start < end) {
+            if (normalized.charAt(start) != normalized.charAt(end)) {
                 isPalindrome = false;
                 break;
             }
+            start++;
+            end--;
         }
 
-     
+      
         if (isPalindrome) {
-            System.out.println("The string \"" + word + "\" is a Palindrome.");
+            System.out.println("\"" + input + "\" is a Palindrome (ignoring spaces and case).");
         } else {
-            System.out.println("The string \"" + word + "\" is NOT a Palindrome.");
+            System.out.println("\"" + input + "\" is NOT a Palindrome.");
         }
     }
 }
