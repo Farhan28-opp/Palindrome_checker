@@ -18,7 +18,7 @@ class PalindromeChecker {
     }
 }
 
-public class UseCase11PalindromeCheckerApp {
+public class PalindromeCheckerApp {
 
     public static void main(String[] args) {
 
