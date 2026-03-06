@@ -1,4 +1,4 @@
-public class UseCase8PalindromeCheckerApp {
+public class PalindromeCheckerApp {
 
    
     static class Node {
