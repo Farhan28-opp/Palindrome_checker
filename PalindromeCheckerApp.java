@@ -2,12 +2,12 @@ import java.util.Stack;
 import java.util.Deque;
 import java.util.LinkedList;
 
-// Strategy Interface
+
 interface PalindromeStrategy {
     boolean checkPalindrome(String input);
 }
 
-// Stack Strategy Implementation
+
 class StackStrategy implements PalindromeStrategy {
 
     public boolean checkPalindrome(String input) {
@@ -27,7 +27,7 @@ class StackStrategy implements PalindromeStrategy {
     }
 }
 
-// Deque Strategy Implementation
+
 class DequeStrategy implements PalindromeStrategy {
 
     public boolean checkPalindrome(String input) {
