@@ -1,33 +1,34 @@
-import java.util.Stack;
-import java.util.Queue;
-import java.util.LinkedList;
+class PalindromeChecker {
 
-public class PalindromeCheckerApp {
+ 
+    public boolean checkPalindrome(String input) {
+
+        int start = 0;
+        int end = input.length() - 1;
+
+        while (start < end) {
+            if (input.charAt(start) != input.charAt(end)) {
+                return false;
+            }
+            start++;
+            end--;
+        }
+
+        return true;
+    }
+}
+
+public class UseCase11PalindromeCheckerApp {
 
     public static void main(String[] args) {
 
-     
-        String word = "level";
+        String word = "radar";
 
-        Stack<Character> stack = new Stack<>();
-        Queue<Character> queue = new LinkedList<>();
+        PalindromeChecker checker = new PalindromeChecker();
 
-        for (int i = 0; i < word.length(); i++) {
-            char ch = word.charAt(i);
-            stack.push(ch);      // LIFO
-            queue.add(ch);       // FIFO
-        }
+        boolean result = checker.checkPalindrome(word);
 
-        boolean isPalindrome = true;
-        while (!queue.isEmpty()) {
-            if (queue.remove() != stack.pop()) {
-                isPalindrome = false;
-                break;
-            }
-        }
-
-     
-        if (isPalindrome) {
+        if (result) {
             System.out.println("The string \"" + word + "\" is a Palindrome.");
         } else {
             System.out.println("The string \"" + word + "\" is NOT a Palindrome.");
